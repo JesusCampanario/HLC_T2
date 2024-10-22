@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario</h2>
+    <form id="Formulario" onsubmit="mostrarDatos(event)">
+        <label for="Nombre">Nombre :</label>
+        <input type="text" id="Nombre" required minlength="3" maxlength="15" autocomplete="off" placeholder="Juan Jesu"> <br> <br>
+
+        <label for="Apellidos">Apellidos :</label>
+        <input type="text" id="Apellidos"> <br> <br>
+
+        <label for="Edad">Edad :</label>
+        <input type="number" id="Edad" required> <br> <br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" required placeholder="juanjesu@example.es"> <br> <br>
+
+        <label for="Contraseña">Contraseña :</label>
+        <input type="password" id="Contraseña"> <br> <br>
+
+        <label for="fecha">Fecha :</label>
+        <input type="date" id="fecha"> <br> <br>
+        
+        <label for="genero">Genero :</label>
+        <input type="radio" id="genero" value="Genero">
+        <label for="Genero">Femenino</label>
+        <input type="radio" id="genero" value="Femenino">
+        <label for="Genero">Masculino</label>
+        <input type="radio" id="genero" value="elefante telepata de guerra">
+        <label for="Genero">elefante telepata de guerra</label> <br> <br>
+
+        <label for="Asignaturas">Asignaturas favoritas</label>
+        <select name="Asignaturas" id="Asignaturas" >
+            <option value="">HLC</option>
+            <option value="">SER</option>
+            <option value="">SOR</option>
+            <option value="">Aplicaciones Web</option>
+            <option value="">Empresas</option>
+            <option value="">Seguridad informática</option>
+        </select>
+
+        <label for="color">Color favorito</label>
+        <input type="color" id="color"> <br> <br>
+
+        <label for="checkbox">Acepto los terminos y condiciones</label>
+        <input type="checkbox" id="checkbox"> <br> <br>
+
+        <label for="button">Enviar</label>
+        <input type="submit" id="Enviar">
+    </form>
+</body>
+</html>

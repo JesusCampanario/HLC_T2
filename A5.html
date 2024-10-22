@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con JavaScript</title>
+    <script>
+        // Función para manejar el envío del formulario
+        function mostrarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe y la página se recargue
+
+            // Obtener los valores del formulario
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var edad = document.getElementById("edad").value;
+            var pais = document.getElementById("pais").value;
+            var fechaNacimiento = document.getElementById("fecha_nacimiento").value;
+            var colorFavorito = document.getElementById("color_favorito").value;
+            var genero = document.querySelector('input[name="genero"]:checked').value;
+            var terminos = document.getElementById("terminos").checked;
+
+            // Mostrar los datos en pantalla
+            var resultado = `
+                <h3>Datos Ingresados:</h3>
+                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Correo electrónico:</strong> ${email}</p>
+                <p><strong>Contraseña:</strong> ${password}</p>
+                <p><strong>Edad:</strong> ${edad}</p>
+                <p><strong>País:</strong> ${pais}</p>
+                <p><strong>Fecha de Nacimiento:</strong> ${fechaNacimiento}</p>
+                <p><strong>Color Favorito:</strong> <span style="background-color: ${colorFavorito}; padding: 5px; color: white;">${colorFavorito}</span></p>
+                <p><strong>Género:</strong> ${genero}</p>
+                <p><strong>Términos aceptados:</strong> ${terminos ? "Sí" : "No"}</p>
+            `;
+
+            // Insertar los datos en el div de resultado
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+
+<!-- Contenido del formulario -->
+<h2>Formulario de registro</h2>
+<form id="Formulario" onsubmit="mostrarDatos(event)">
+        <label for="Nombre">Nombre :</label>
+        <input type="text" id="nombre" required minlength="3" maxlength="50" autocomplete="yes" placeholder="Escribe tu nombre completo"> <br> <br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" required placeholder="email@example.es" minlength="6" maxlength="20" autocomplete="yes"> <br> <br>
+
+        <label for="Contraseña">Contraseña :</label>
+        <input type="password" id="password" required placeholder="Contraseña de 6 a 20 caracteres" minlength=""> <br> <br>
+
+        <label for="Edad">Edad :</label>
+        <input type="number" id="edad" required placeholder="introduce tu edad" min="1" max="120"> <br> <br>
+
+        <label for="País">País</label>
+        <select name="País" id="pais" required ><br><br>
+            <option value="">Elige tu país</option> 
+            <option value="">Paises Bajos</option>  
+            <option value="">Italia</option>  
+            <option value="">Alemania</option>  
+            <option value="">Reino Unido</option>  
+            <option value="">Dinamarca</option>
+            <option value="">España</option>
+        </select> <br><br>
+        
+        <label for="Fecha">Fecha de Nacimiento</label>
+        <input type="date" id="fecha_nacimiento" required > <br> <br>
+
+        <label for="color">Color favorito</label>
+        <input type="color" id="color_favorito" required> <br> <br>
+        
+        <label for="genero">Genero :</label><br>
+
+                <input type="radio" name="genero" id="femenino" required value="femenino">
+                <label for="femenino">Femenino</label><br>
+                <input type="radio" name="genero" id="masculino" required value="masculino">
+                <label for="masculino">Masculino</label>
+
+<br><br>
+        <input type="checkbox" id="terminos">
+        <label for="checkbox">Acepto los terminos y condiciones</label> <br> <br>
+
+        <label for="button"></label>
+        <input type="submit" id="registrarse" value="registrarse">
+          
+</form>
+<!-- Fin del contenido del formulario -->
+
+<!-- Div donde se mostrarán los datos ingresados -->
+    <div id="resultado"></div>
+
+</body>
+</html>
